@@ -2,7 +2,7 @@
 
 A simple Java-based web application for educational purposes. Users select symptoms and receive possible conditions with health advice using rule-based IF-ELSE logic.
 
- Disclaimer
+## Disclaimer
 **This is NOT a medical diagnosis tool.** This application is for educational purposes only. Always consult a qualified healthcare professional for medical advice.
 
 ---
