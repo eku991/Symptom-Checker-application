@@ -2,12 +2,12 @@
 
 A simple Java-based web application for educational purposes. Users select symptoms and receive possible conditions with health advice using rule-based IF-ELSE logic.
 
-## ⚠️ Disclaimer
+##  Disclaimer
 **This is NOT a medical diagnosis tool.** This application is for educational purposes only. Always consult a qualified healthcare professional for medical advice.
 
 ---
 
-## 🎯 Features
+## Features
 
 - Select from 10 common symptoms via checkboxes
 - View possible matching conditions
@@ -17,7 +17,7 @@ A simple Java-based web application for educational purposes. Users select sympt
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Java 11** - Main programming language
 - **Java Servlets** - Backend handling
@@ -49,7 +49,7 @@ src/
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Prerequisites
 - Java 11 or higher
@@ -80,7 +80,7 @@ http://localhost:8080
 
 ---
 
-## 📚 OOP Concepts Demonstrated
+##  OOP Concepts Demonstrated
 
 | Concept | Example |
 |---------|---------|
@@ -91,6 +91,6 @@ http://localhost:8080
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Educational project for health informatics demonstration.
