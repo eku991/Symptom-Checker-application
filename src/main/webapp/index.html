@@ -1,118 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple symptom checker for educational purposes">
     <title>Symptom Checker</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .disclaimer {
+            color: red;
+            margin-bottom: 15px;
+        }
+
+        .symptoms {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <header>
-            <h1>🩺 Symptom Checker</h1>
-            <p class="subtitle">Select your symptoms to get health guidance</p>
-        </header>
 
-        <!-- Disclaimer Banner -->
-        <div class="disclaimer">
-            <strong>⚠️ Disclaimer:</strong> This is NOT a medical diagnosis. 
-            This tool is for educational purposes only. Always consult a qualified 
-            healthcare professional for medical advice.
+        <div class="header">
+            <h1>Symptom Checker</h1>
+            <p>Select symptoms you have</p>
         </div>
 
-        <!-- Symptom Selection Form -->
-        <form action="check" method="POST" id="symptomForm">
-            <div class="symptoms-section">
-                <h2>Select Your Symptoms</h2>
-                <div class="symptoms-grid">
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="fever">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🌡️ Fever</span>
-                        <span class="symptom-desc">Body temperature above 38°C</span>
-                    </label>
+        <p class="disclaimer">
+            This is only for a school project. Not real medical advice.
+        </p>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="cough">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">😷 Cough</span>
-                        <span class="symptom-desc">Persistent coughing</span>
-                    </label>
+        <form action="#" method="post">
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="headache">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🤕 Headache</span>
-                        <span class="symptom-desc">Pain in the head area</span>
-                    </label>
+            <div class="symptoms">
+                <h3>Symptoms</h3>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="fatigue">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">😴 Fatigue</span>
-                        <span class="symptom-desc">Feeling very tired</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="fever"> Fever
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="runny_nose">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🤧 Runny Nose</span>
-                        <span class="symptom-desc">Excess nasal discharge</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="cough"> Cough
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="sneezing">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🤧 Sneezing</span>
-                        <span class="symptom-desc">Frequent sneezing</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="headache"> Headache
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="body_aches">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">💪 Body Aches</span>
-                        <span class="symptom-desc">Muscle pain throughout body</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="fatigue"> Fatigue
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="sore_throat">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🗣️ Sore Throat</span>
-                        <span class="symptom-desc">Pain in throat</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="runnyNose"> Runny Nose
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="nausea">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">🤢 Nausea</span>
-                        <span class="symptom-desc">Feeling sick to stomach</span>
-                    </label>
+                <label>
+                    <input type="checkbox" name="sneezing"> Sneezing
+                </label><br>
 
-                    <label class="symptom-item">
-                        <input type="checkbox" name="symptoms" value="dizziness">
-                        <span class="checkmark"></span>
-                        <span class="symptom-name">😵 Dizziness</span>
-                        <span class="symptom-desc">Feeling lightheaded</span>
-                    </label>
-                </div>
+                <label>
+                    <input type="checkbox" name="bodyAche"> Body Ache
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="soreThroat"> Sore Throat
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="nausea"> Nausea
+                </label><br>
+
+                <label>
+                    <input type="checkbox" name="dizziness"> Dizziness
+                </label><br>
             </div>
 
-            <button type="submit" class="submit-btn">
-                Check My Symptoms
-            </button>
+            <input type="submit" value="Check Symptoms">
+
         </form>
 
-        <!-- Results Section (shown after form submission) -->
-        <div id="results" class="results-section" style="display: none;">
-            <h2>Results</h2>
-            <div id="resultsContent"></div>
+        <div class="results">
+            <h3>Result</h3>
+            <p>Result will be shown here.</p>
         </div>
 
-        <footer>
-            <p>💡 <strong>Educational Project</strong> - Clinical Decision Support Demo</p>
-            <p>This demonstrates simple IF-ELSE logic for symptom matching.</p>
-        </footer>
+        <div class="footer">
+            <p>Educational Project</p>
+            <p>This project uses if else statements.</p>
+        </div>
+
     </div>
 </body>
 </html>
+
