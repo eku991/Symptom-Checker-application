@@ -1,110 +1,178 @@
-/* ========================================
-   Symptom Checker - Beginner CSS
-   ======================================== */
+/* ==========================
+   Simple Symptom Checker CSS
+   ========================== */
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e6e6f0;
+    background: #f0f2f5;
     padding: 20px;
+    line-height: 1.5;
 }
 
+/* Container */
 .container {
-    width: 85%;
-    margin: auto;
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
-.header {
+header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.header h1 {
+header h1 {
     color: #333;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1rem;
 }
 
 /* Disclaimer */
 .disclaimer {
-    background-color: #fff3cd;
+    background: #fff3cd;
     border: 1px solid #ffc107;
+    border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
     color: #856404;
     font-size: 0.9rem;
 }
 
-/* Symptoms */
-.symptoms {
-    margin-bottom: 20px;
+/* Symptoms Section */
+.symptoms-section h2 {
+    color: #333;
+    margin-bottom: 15px;
 }
 
-.symptom {
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+/* Symptom Item */
+.symptom-item {
+    background: #f8f9fa;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 10px;
-    margin-bottom: 10px;
-}
-
-/* Highlight symptom when checkbox is checked */
-.symptom input[type="checkbox"]:checked ~ .name,
-.symptom input[type="checkbox"]:checked ~ .desc {
-    color: #4b5bdc;
-    font-weight: bold;
-}
-
-/* Simple background highlight */
-.symptom input[type="checkbox"]:checked {
-    accent-color: #4b5bdc;
-}
-
-/* Text */
-.name {
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 5px;
-}
-
-.desc {
-    display: block;
-    font-size: 0.85rem;
-    color: #555;
-    margin-left: 20px;
-}
-
-/* Button */
-.btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #4b5bdc;
-    color: white;
-    border: none;
-    border-radius: 20px;
     cursor: pointer;
+    transition: 0.2s;
+    position: relative;
 }
 
-/* Results */
-.results {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 8px;
+.symptom-item:hover {
+    border-color: #667eea;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    margin-top: 30px;
+.symptom-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.symptom-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.symptom-desc {
     font-size: 0.85rem;
     color: #666;
 }
 
+/* Submit Button */
+.submit-btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto 0;
+    padding: 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #5a6edc;
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.condition-card,
+.advice-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+}
+
+/* Advice urgency colors */
+.advice-card.urgency-low {
+    border-left-color: #28a745;
+}
+
+.advice-card.urgency-medium {
+    border-left-color: #ffc107;
+}
+
+.advice-card.urgency-high {
+    border-left-color: #dc3545;
+}
+
+/* No results message */
+.no-results {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+}
