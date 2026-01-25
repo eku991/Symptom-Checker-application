@@ -1,214 +1,78 @@
-/* ==========================
-   Simple Symptom Checker CSS
-   ========================== */
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
 body {
     font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    background-color: #f2f2f2;
     padding: 20px;
-    line-height: 1.5;
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
 }
 
-header {
+.header {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    color: #333;
-    font-size: 2rem;
-}
-
-.subtitle {
-    color: #666;
-    font-size: 1rem;
-}
-
-.disclaimer {
-    background: #fff3cd;
-    border: 1px solid #ffc107;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
-    color: #856404;
-    font-size: 0.9rem;
-}
-
-.symptoms-section h2 {
-    color: #333;
     margin-bottom: 15px;
 }
 
-.symptoms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+.disclaimer {
+    color: darkred;
+    margin-bottom: 20px;
 }
 
-.symptom-item {
-    background: #f8f9fa;
+.symptoms {
+    margin-bottom: 20px;
+}
+
+.symptom {
     border: 1px solid #ccc;
-    border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
-    position: relative;
-}
-
-/* Hide checkbox */
-.symptom-item input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-}
-
-/* Text */
-.symptom-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.symptom-desc {
-    font-size: 0.85rem;
-    color: #666;
-}
-
-/*  Highlight when selected */
-.symptom-item input[type="checkbox"]:checked ~ .symptom-name {
-    color: #667eea;
-}
-
-.symptom-item input[type="checkbox"]:checked ~ .symptom-desc {
-    color: #333;
-}
-
-.symptom-item input[type="checkbox"]:checked ~ * {
-    background: none;
-}
-
-/* Change box when selected */
-.symptom-item input[type="checkbox"]:checked {
-    display: none;
-}
-
-.symptom-item input[type="checkbox"]:checked ~ .symptom-name,
-.symptom-item input[type="checkbox"]:checked ~ .symptom-desc {
-    font-weight: bold;
-}
-
-.symptom-item input[type="checkbox"]:checked ~ .symptom-desc {
-    color: #444;
-}
-
-/* Use border & background highlight */
-.symptom-item input[type="checkbox"]:checked ~ .symptom-name::before {
-    content: "✓ ";
-    color: green;
-}
-
-.symptom-item input[type="checkbox"]:checked ~ .symptom-item {
-    background: #e8f0ff;
-}
-
-/* Fallback highlight (simple) */
-.symptom-item.selected {
-    background: #e8f0ff;
-    border-color: #667eea;
-}
-
-/* Submit Button */
-.submit-btn {
-    display: block;
-    width: 100%;
-    max-width: 250px;
-    margin: 20px auto 0;
-    padding: 10px;
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-.submit-btn:hover {
-    background: #5a6edc;
-}
-
-/* Results Section */
-.results-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-.condition-card,
-.advice-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
     margin-bottom: 10px;
-    border-left: 4px solid #667eea;
 }
 
-/* Advice urgency colors */
-.advice-card.urgency-low {
-    border-left-color: #28a745;
+/* Keep checkbox highlighted when selected */
+.symptom input[type="checkbox"]:checked {
+    accent-color: #4CAF50;
 }
 
-.advice-card.urgency-medium {
-    border-left-color: #ffc107;
+/* Highlight the symptom box when checked */
+.symptom input[type="checkbox"]:checked + .name,
+.symptom input[type="checkbox"]:checked ~ .desc {
+    font-weight: bold;
 }
 
-.advice-card.urgency-high {
-    border-left-color: #dc3545;
+.symptom input[type="checkbox"]:checked {
+    outline: none;
 }
 
-/* No results message */
-.no-results {
-    text-align: center;
-    padding: 20px;
+/* Simple visual feedback */
+.symptom input[type="checkbox"]:checked {
+    background-color: #e6ffe6;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.btn {
+    padding: 8px 15px;
+}
+
+.results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 0.85em;
     color: #666;
-}
-
-/* Footer */
-footer {
-    margin-top: 30px;
-    padding-top: 10px;
-    border-top: 1px solid #ccc;
     text-align: center;
-    color: #666;
-    font-size: 0.85rem;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .symptoms-grid {
-        grid-template-columns: 1fr;
-    }
 }
