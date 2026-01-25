@@ -1,78 +1,110 @@
+/* ========================================
+   Symptom Checker - Beginner CSS
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #e6e6f0;
     padding: 20px;
 }
 
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
     background-color: white;
-    padding: 20px;
+    padding: 25px;
+    border-radius: 10px;
 }
 
+/* Header */
 .header {
     text-align: center;
-    margin-bottom: 15px;
-}
-
-.disclaimer {
-    color: darkred;
     margin-bottom: 20px;
 }
 
+.header h1 {
+    color: #333;
+}
+
+/* Disclaimer */
+.disclaimer {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #856404;
+    font-size: 0.9rem;
+}
+
+/* Symptoms */
 .symptoms {
     margin-bottom: 20px;
 }
 
 .symptom {
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Keep checkbox highlighted when selected */
-.symptom input[type="checkbox"]:checked {
-    accent-color: #4CAF50;
-}
-
-/* Highlight the symptom box when checked */
-.symptom input[type="checkbox"]:checked + .name,
+/* Highlight symptom when checkbox is checked */
+.symptom input[type="checkbox"]:checked ~ .name,
 .symptom input[type="checkbox"]:checked ~ .desc {
+    color: #4b5bdc;
     font-weight: bold;
 }
 
+/* Simple background highlight */
 .symptom input[type="checkbox"]:checked {
-    outline: none;
+    accent-color: #4b5bdc;
 }
 
-/* Simple visual feedback */
-.symptom input[type="checkbox"]:checked {
-    background-color: #e6ffe6;
-}
-
+/* Text */
 .name {
     font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .desc {
-    font-size: 0.9em;
+    display: block;
+    font-size: 0.85rem;
     color: #555;
+    margin-left: 20px;
 }
 
+/* Button */
 .btn {
-    padding: 8px 15px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4b5bdc;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
+/* Results */
 .results {
-    margin-top: 20px;
-    padding: 10px;
     border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
+/* Footer */
 .footer {
-    margin-top: 25px;
-    font-size: 0.85em;
-    color: #666;
     text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #666;
 }
+
